@@ -1,0 +1,67 @@
+1) Delete an actor having first name 'ELVIS' and last name 'MARX'
+=> DELETE from actor WHERE first_name='ELVIS' AND last_name='MARX';
+
+2) List actors whose first name start with 'B'
+=>Select * from actor where first_name like 'B%';
+
+3) List actors with full name (first name + last name)
+=> Select CONCAT(first_name, ' ', last_name) AS 'fullname' from actor
+
+4) List actors whose full name start with 'B' and end with 'N'         //Doubt
+=> Select CONCAT(first_name, ' ', last_name) AS 'fullname' from actor AND fullname like 'B%N';
+
+5) Insert your details into actors table
+=> INSERT INTO actor(first_name, last_name) VALUES ('kalpesh', 'Ahir');
+
+
+6) Insert multiple records using one insert query
+=>INSERT INTO actor (first_name,last_name) VALUES ('suraj', 'patel'), ('kevin','shah'), ('mehul', 'makwana');
+
+
+7) Update actor 'VIVIEN BERGEN' first name to 'Robert' and last name to 'DOWNY'
+=>UPDATE actor SET first_name = 'Robert', last_name= 'DOWNY' WHERE first_name='VIVIEN' AND last_name='BERGEN';
+
+8) List cities of 'India'
+=> SELECT city.city FROM city LEFT JOIN country ON city.country_id = country.country_id WHERE country.country = 'india';
+
+
+9) Find number of cities in each country         //Doubt
+=> SELECT COUNT(city.city) FROM city LEFT JOIN country ON city.country_id = country.country_id;
+
+
+10) Find customers whose last name is equal to first name of another customer in alphabatical order 
+=> 
+
+11) Find list of customers along with actor details if customer and actor shares the common last name order by customer last name
+
+
+12) List actors who appeared in film 'ACE GOLDFINGER'   //Doubt
+=>SELECT first_name,last_name FROM actor WHERE(SELECT title FROM film where title = 'ACE GOLDFINGER' );
+
+
+
+13) Find average amount spent by each customer order by average amount
+
+
+14) List unique actors whose first name start with 'An%'
+=> SELECT DISTINCT first_name FROM actor where first_name LIKE 'An%';
+
+
+
+15) List customer id, first name, last name, total amount paid by them 
+=>
+
+
+16) Find actor last name and count that share same last name more than 3 times
+
+
+17) Find customer id, first name, last name, total amount whose total amount exceed 200. Customer who spent the most should be on top.
+
+
+18) Display actor list with full name concate with 'Comma'.  (e.g. Mark, Zukerberg)
+
+
+19) Find how many films are short, medium and long depending on length. 
+ if length is less than 70 then it is short
+ if length is between 70 and 120  then it is medium
+ and if length is grater than 120 then it is long

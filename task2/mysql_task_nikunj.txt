@@ -1,0 +1,74 @@
+1.Table Name : tbl_candidate
+Fields : 
+candidate_id (int(11)) primary key ((autoincrement))
+first_name (varchar(50))
+last_name (varchar(50))
+email (varchar(50))
+skill (varchar(255)) // Add Mulitple Skill(comma separated) Refere to tbl_skill table
+job_id (int(11)) // Latest Job Assign Id
+
+2. Table Name : tbl_client
+Fields : 
+client_id (int(11)) primary key ((autoincrement))
+company_name (varchar(50))
+first_name (varchar(50))
+last_name (varchar(50))
+location_name (varchar(50))
+email (varchar(50))
+
+
+3. Table Name : tbl_job
+Fields : 
+job_id (int(11)) primary key ((autoincrement))
+job_title (varchar(50))
+vacancy_no (init(11))
+no_assign_vacancy (init(11))
+start_date date
+end_date date 
+job_client_id (init(11))  refer to tbl_client table
+skill_id  // Add Mulitple Skill(comma separated) Refere to tbl_skill table
+category_id  // Refere to tbl_category table
+
+
+4. Table Name : tbl_candidate_assign_job
+Fields : 
+assign_id (int(11)) primary key ((autoincrement))
+job_id (int(11)) 
+candidate_id (int(11)) 
+job_date date 
+status init(1) // 1=>Approve 2=> Rejected
+
+5. Table Name : tbl_skill
+Fields : 
+skill_id (int(11)) primary key ((autoincrement))
+skill_name (varchar(50))
+Ex Sample data : Accounts, PHP, JAVA,HTML, CSS , Ad Agency, Audit, Automation Engineer etc.
+
+6. Table Name : tbl_job_category
+Fields : 
+category_id (int(11)) primary key ((autoincrement))
+category_name (varchar(50))
+Ex Sample data : Accounting, Admin & Clerical, Automotive, Banking, Biotech, Broadcast - Journalism etc.
+
+
+
+Questions:
+----------
+
+1. Create Above all tables give scheme with Primary and foregin key relationship.
+2. Enter ample amount of the data for each of the tables.
+3. Get list of jobs created by each client.
+4. Get list of jobs created by each client between particular duration. (for ex Jobs between job start date and end date)
+5. Get List of jobs along with skills for each them.
+6. Get List of Candidate along with Skill for each them.
+7. One Jobs assign atleat 3 to 4 candiadte with valid data.
+8. Most 5 important skill required for jobs.
+9. List Top 5 candidates with the jobs completed count.
+10. List 5 clients having maximum no of jobs created.
+11. List top 5 candidates having the skill matching to the jobs skills, if Possible show count of matching skills.
+12. List Candidate who are working today with jobs title, dates, jobs location, candiate name etc.
+13. List Candidate who are working future with jobs title, dates, jobs location, candiate name etc.
+14. List jobs for client year wise.
+15. List jobs for client month wise for particular year.
+
+
